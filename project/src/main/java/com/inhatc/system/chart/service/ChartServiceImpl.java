@@ -86,6 +86,12 @@ public class ChartServiceImpl implements ChartService {
 			case 8:
 				ins_name = "소프트웨어 설치";
 				break;
+			case 10:
+				ins_name = "소프트웨어 인증";
+				break;
+			case 11:
+				ins_name = "Net-class 관련";
+				break;
 			default: 
 				ins_name = "기타";
 				break;

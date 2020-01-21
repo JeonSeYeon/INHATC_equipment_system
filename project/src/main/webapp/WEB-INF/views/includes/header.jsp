@@ -35,6 +35,7 @@ function fncManager() {
 						
 		}else {
 			gfnOpenPop('/managerAction', '등록', '800', '550');
+			
 			return false;
 		}
 	
@@ -42,7 +43,7 @@ function fncManager() {
 }
 
 function fncLogin() {
-		gfnOpenPop('/loginHome', '로그인', '550', '450');
+		location.href='/loginHome';
 		return false;
 }
 

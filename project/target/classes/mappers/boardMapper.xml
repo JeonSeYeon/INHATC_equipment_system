@@ -56,9 +56,9 @@
 			<if test="searchType == 'c'.toString()">
 				and content like CONCAT('%', #{keyword}, '%')
 			</if>
-			<if test="searchType == 'w'.toString()">
+			<!-- <if test="searchType == 'w'.toString()">
 				and instrument like CONCAT('%', #{keyword}, '%')
-			</if>
+			</if> -->
 			<if test="searchType == 'tc'.toString()">
 				and client_name like CONCAT('%', #{keyword}, '%')
 			</if>

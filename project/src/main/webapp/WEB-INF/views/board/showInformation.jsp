@@ -39,7 +39,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<div class="box">
-			<div style="overflow: scroll; width: 795px; height: 390px;">
+			<div style="overflow: scroll; width: 800px; height: 500px;">
 				<div class="box-header">
 					<div class="box-name"></div>
 					<div class="box-icons"></div>

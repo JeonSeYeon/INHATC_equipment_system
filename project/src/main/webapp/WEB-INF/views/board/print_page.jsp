@@ -119,6 +119,8 @@ var goPrints = function(title){
 										<c:if test="${boardList[rowIndex.index].instrument == '7'}">앰프</c:if>
 										<c:if test="${boardList[rowIndex.index].instrument == '8'}">소프트웨어 설치</c:if>						
 										<c:if test="${boardList[rowIndex.index].instrument == '9'}">기타</c:if>
+										<c:if test="${boardList[rowIndex.index].instrument == '10'}">소프트웨어 인증</c:if>
+										<c:if test="${boardList[rowIndex.index].instrument == '11'}">Net-class 관련</c:if>
 										</td>
 									
 									<td >${boardList[rowIndex.index].regdate} </td>

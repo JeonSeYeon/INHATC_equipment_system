@@ -122,7 +122,7 @@ text-align: center;
 			<div class="col-xs-12">
 				<div class="box">
 					 -->
-					<div class="row" style="margin-top:30px;">
+					<div class="row" style="margin-top:10px;">
 						<div class="col-lg-12">
 						<div class="panel panel-default">
 					
@@ -173,6 +173,8 @@ text-align: center;
 														<c:if test="${boardList[rowIndex.index].instrument == '7'}">앰프</c:if>
 														<c:if test="${boardList[rowIndex.index].instrument == '8'}">소프트웨어 설치</c:if>						
 														<c:if test="${boardList[rowIndex.index].instrument == '9'}">기타</c:if>
+														<c:if test="${boardList[rowIndex.index].instrument == '10'}">소프트웨어 인증</c:if>
+														<c:if test="${boardList[rowIndex.index].instrument == '11'}">Net-class 관련</c:if>
 														</td>
 													<td>${boardList[rowIndex.index].client_name}</td>	
 													<td>${boardList[rowIndex.index].client_local}</td>
@@ -208,7 +210,7 @@ text-align: center;
 							<option value="">검색조건</option>
 							<option value="t">작업분류</option> 
 							<option value="c">내용</option>
-							<option value="w">기계명</option>
+							<!-- <option value="w">기계명</option> -->
 							<option value="tc">의뢰인</option>
 							<option value="lo">위치</option>
 							<option value="all">현황</option>

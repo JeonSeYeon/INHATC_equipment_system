@@ -5,6 +5,7 @@ public class ChartVO {
 	private String practice_classification;
 	private String normal_classification;
 	private String sum_classification;
+	private String share_classification;
 	private String year;
 	private String completedate;
 private String instrument;
@@ -13,6 +14,7 @@ private String instrument;
 	public String getInstrument() {
 	return instrument;
 }
+	
 public void setInstrument(String instrument) {
 	this.instrument = instrument;
 }
@@ -46,6 +48,15 @@ public void setInstrument(String instrument) {
 	public void setSum_classification(String sum_classification) {
 		this.sum_classification = sum_classification;
 	}
+	
+	public String getShare_classification() {
+		return share_classification;
+	}
+
+	public void setShare_classification(String share_classification) {
+		this.share_classification = share_classification;
+	}
+
 	public String getYear() {
 		return year;
 	}

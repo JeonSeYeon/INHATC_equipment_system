@@ -58,6 +58,7 @@
 							<option value="실습실" selected="selected">실습실</option>
 							<option value="행정연구실">행정연구실</option>
 							<option value="일반강의실">일반강의실</option>
+							<option value="공용PC실">공용PC실</option>
 					</select></td>
 				</tr>
 
@@ -87,6 +88,8 @@
 						type="radio" name="instrument" value="6">프로젝터 빔
 						<input type="radio" name="instrument" value="7">앰프 
 						<br> <input type="radio" name="instrument" value="8">소프트웨어 설치
+						<input type="radio" name="instrument" value="10">소프트웨어 인증
+						<input type="radio" name="instrument" value="11">Net-class 관련
 						<input type="radio" name="instrument" value="9">기타</td>
 				</tr>
 

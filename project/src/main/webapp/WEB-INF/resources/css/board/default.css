@@ -17,7 +17,7 @@ fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
 article,aside,canvas,details,figcaption,figure,footer,header,hgroup,
 menu,nav,section,summary,time,mark,audio,video{margin:0; padding:0;}
 html, body { height:100%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
-body {margin:0; padding:0; color:#5a5a5a;font-family:'NanumGothic', Helvetica, tahoma, arial, sans-serif; font-size:15px;letter-spacing:-1;}
+body {margin:0; padding:0; color:#5a5a5a;font-family:'NanumGothic', Helvetica, tahoma, arial, sans-serif; font-size:12px;letter-spacing:-1;}
 li { list-style-type:none; }
 img,fieldset{ border:none; }img{ max-width:100%; }/*ipad사이즈에서 userlogin 의 title등 %로 된 것을 위해*/
 li img, dd img { vertical-align:top; }
@@ -25,7 +25,7 @@ legend { font-size:0px !important;}
 input, li { vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
 a:link, a:visited, a:hover, a:active, a:focus { text-decoration:none; color:inherit; }
 h1,h2,h3,h4,h5,h6 { font-weight:normal;}
-table { border-collapse:collapse; border-spacing:0; table-layout:fixed; empty-cells:show; }
+table { border-collapse:collapse; border-spacing:0; table-layout:fixed; empty-cells:show; font-size:11px;}
 button{ cursor:pointer;}
 
 .row:before, .row:after{display:block;content:'';clear:both;}

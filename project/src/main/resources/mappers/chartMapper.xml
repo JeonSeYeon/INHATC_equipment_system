@@ -9,10 +9,16 @@
 		SUBSTRING(completedate,6,2) as year,
 		sum(case when manager_classification = '행정연구실' then 1 else 0 end) as
 		research_classification,
+		
 		sum(case when manager_classification = '실습실' then 1 else 0 end) as
 		practice_classification,
+		
 		sum(case when manager_classification = '일반강의실' then 1 else 0 end) as
 		normal_classification,
+		
+		sum(case when manager_classification = '공용PC실' then 1 else 0 end) as
+		share_classification,
+		
 		count(manager_classification) as sum_classification
 		from board
 		where progress = "처리완료"

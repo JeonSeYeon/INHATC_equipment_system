@@ -106,10 +106,10 @@ String userID = null;
 						type="radio" name="instrument" value="5">전화기 <input
 						type="radio" name="instrument" value="6">프로젝터 빔 <input
 						type="radio" name="instrument" value="7">앰프 
-						<br>
-						<input
-						type="radio" name="instrument" value="8">소프트웨어 설치 <input
-						type="radio" name="instrument" value="9">기타</td>
+						<br> <input type="radio" name="instrument" value="8">소프트웨어 설치
+						<input type="radio" name="instrument" value="10">소프트웨어 인증
+						<input type="radio" name="instrument" value="11">Net-class 관련
+						<input type="radio" name="instrument" value="9">기타</td>
 
 				</tr>
 							

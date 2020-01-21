@@ -45,11 +45,14 @@ public class ChartController {
 		List list2 = new ArrayList<String>();
 		List list3 = new ArrayList<String>();
 		List list4 = new ArrayList<String>();
+		List list5 = new ArrayList<String>();
+		
 		for (int a = 0; a < 12; a++) {
 			list.add('0');
 			list2.add('0');
 			list3.add('0');
 			list4.add('0');
+			list5.add('0');
 		}
 		for (int i = 0; i < ChartData_sum.size(); i++) {
 			int getYear = Integer.parseInt(ChartData_sum.get(i).getYear()) - 1;
@@ -57,10 +60,14 @@ public class ChartController {
 			list2.remove(Integer.parseInt(ChartData_sum.get(i).getYear()) - 1);
 			list3.remove(Integer.parseInt(ChartData_sum.get(i).getYear()) - 1);
 			list4.remove(Integer.parseInt(ChartData_sum.get(i).getYear()) - 1);
+			list5.remove(Integer.parseInt(ChartData_sum.get(i).getYear()) - 1);
+			
 			list.add(getYear, Integer.parseInt(ChartData_sum.get(i).getResearch_classification()));
 			list2.add(getYear, Integer.parseInt(ChartData_sum.get(i).getPractice_classification()));
 			list3.add(getYear, Integer.parseInt(ChartData_sum.get(i).getNormal_classification()));
-			list4.add(getYear, Integer.parseInt(ChartData_sum.get(i).getSum_classification()));
+			list4.add(getYear, Integer.parseInt(ChartData_sum.get(i).getShare_classification()));
+			list5.add(getYear, Integer.parseInt(ChartData_sum.get(i).getSum_classification()));
+			
 
 		}
 		classificationInfo.put("data", list);
@@ -76,8 +83,14 @@ public class ChartController {
 		classificationInfo.put("data", list3);
 		classificationInfo.put("name", "일반강의실");
 		classificationArray.add(classificationInfo);
+		
 		classificationInfo = new JSONObject();
 		classificationInfo.put("data", list4);
+		classificationInfo.put("name", "공용PC실");
+		classificationArray.add(classificationInfo);
+		
+		classificationInfo = new JSONObject();
+		classificationInfo.put("data", list5);
 		classificationInfo.put("name", "총합");
 		classificationArray.add(classificationInfo);
 

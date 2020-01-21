@@ -14,7 +14,8 @@ footer {
 }
 
 .foo_div1 span{
-	font-size: 15px;
+    margin-top: 5px;
+	font-size: 13px;
 	color: white;
 }
 
@@ -28,9 +29,9 @@ footer {
 <div>
 	<footer>
 		<div class="foo_div1">
-		
-		<span> 인천광역시 미추홀구 인하로 100        인하공업전문대학 PC지원실</span>
-		<P>tktktk654@naver.com</P>
+		<p>   </p>
+		<span> Address: 인천광역시 미추홀구 인하로 100        인하공업전문대학 PC지원실</span>
+		<P> Email: tktktk654@naver.com</P>
 
 		</div>
 	</footer>
