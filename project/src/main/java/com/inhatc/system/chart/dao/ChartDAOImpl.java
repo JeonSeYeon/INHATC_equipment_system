@@ -22,22 +22,18 @@ public class ChartDAOImpl implements ChartDAO{
 
 	@Override
 	public List<ChartVO> getChartData(ChartVO vo) throws Exception {
-		// TODO Auto-generated method stub
 		return session.selectList("com.inhatc.mapper.ChartMapper.getChartData",vo);
 	}
 
 
 	@Override
 	public List<String> getinstrumentListDataName() {
-		// TODO Auto-generated method stub
-		
 		return session.selectList("com.inhatc.mapper.ChartMapper.getinstrumentListDataName");
 	}
 
 
 	@Override
 	public List<Integer> getinstrumentListData(ChartVO chartVO) {
-		// TODO Auto-generated method stub
 		return session.selectList("com.inhatc.mapper.ChartMapper.getinstrumentListData" , chartVO);
 	}
 

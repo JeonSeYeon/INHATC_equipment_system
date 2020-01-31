@@ -25,7 +25,7 @@ legend { font-size:0px !important;}
 input, li { vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
 a:link, a:visited, a:hover, a:active, a:focus { text-decoration:none; color:inherit; }
 h1,h2,h3,h4,h5,h6 { font-weight:normal;}
-table { border-collapse:collapse; border-spacing:0; table-layout:fixed; empty-cells:show; font-size:11px;}
+table { border-collapse:collapse; border-spacing:0; table-layout:fixed; empty-cells:show; font-size:11px; marign:100px;}
 button{ cursor:pointer;}
 
 .row:before, .row:after{display:block;content:'';clear:both;}

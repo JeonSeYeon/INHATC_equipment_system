@@ -13,29 +13,6 @@ import com.inhatc.system.chart.dao.ChartDAO;
 import com.inhatc.system.chart.vo.ChartVO;
 
 
-/**************************************************************************************
- *
- * @Class Name : SysUserServiceImpl.java
- * @Description : 사용자를 관리하는 서비스
- * 
- * @Modification Information
- *               <p>
- *               <b>NOTE</b>:
- * @author 박충규
- * @since 2017.08.02
- * @version 1.0
- * @see
- * 
- *      <pre>
- *  == 개정이력(Modification Information) ==
- *   
- *   수정일                   수정자              수정내용
- *  ------------    --------    ---------------------------
- *   2017.08.02     박충규              최초 생성
- * 
- *      </pre>
- **************************************************************************************/
-
 @Service
 public class ChartServiceImpl implements ChartService {
 
@@ -49,7 +26,6 @@ public class ChartServiceImpl implements ChartService {
 
 	@Override
 	public List<Map<String, Object>> getChartData2(ChartVO chartvo) {
-		// TODO Auto-generated method stub
 		
 		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
 		

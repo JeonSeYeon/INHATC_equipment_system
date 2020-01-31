@@ -59,6 +59,7 @@
 							<option value="행정연구실">행정연구실</option>
 							<option value="일반강의실">일반강의실</option>
 							<option value="공용PC실">공용PC실</option>
+							<option value="기타 - 회의실 등">기타 - 회의실 등</option>
 					</select></td>
 				</tr>
 

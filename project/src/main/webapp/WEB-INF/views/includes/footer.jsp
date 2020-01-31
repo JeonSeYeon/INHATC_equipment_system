@@ -30,7 +30,7 @@ footer {
 	<footer>
 		<div class="foo_div1">
 		<p>   </p>
-		<span> Address: 인천광역시 미추홀구 인하로 100        인하공업전문대학 PC지원실</span>
+		<span> Address: 인천광역시 미추홀구 인하로 100       인하공업전문대학 IT지원실</span>
 		<P> Email: tktktk654@naver.com</P>
 
 		</div>

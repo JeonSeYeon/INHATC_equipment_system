@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <jsp:include page="/WEB-INF/views/includes/home.jsp" flush="true" />
+<jsp:include page="/WEB-INF/views/includes/header.jsp" flush="true" />
 <script src="/js/main/util.js" type="text/javascript"></script>
 
 <script src="http://code.jquery.com/jquery.js"></script>
@@ -11,22 +12,20 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 
-<jsp:include page="/WEB-INF/views/includes/header.jsp" flush="true" />
-<!--  <table>
- 	<tr>
- 		<div id="logo" class="col-xs-12	col-sm-10">
-				<a href="/">INHATCSYSTEM</a>
-		</div>
- 	</tr>
+<div style="margin-top:70px;">
+<table>
 	<tr>
 		<td> <select name="YEAR" id="YEAR" title="년도" class="select w80" onchange="javascript:viewChart(this)"></select> 
 		</td>
 	</tr>
-</table> -->
-	<div style="margin-top:70px;">
-    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-	 <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-	 </div>
+</table>
+</div>
+
+    <div id="container" style="min-width: 310px; height: 400px;  margin-top: 10px"></div>
+    <br>
+    <br>
+	 <div id="container2" style="min-width: 310px; height: 400px; margin-top: 50px"></div>
+
 <script>
     $(document).ready(function(){ //홈페이지 로딩 시 호출
         var dt = new Date();	// date 객체생성?
@@ -41,8 +40,9 @@
         var year = "";
         // 발행 뿌려주기
         $("#YEAR").append("<option value=''>년도</option>");
-        // 올해 기준으로 -1년부터 +5년을 보여준다.
-        for(var y = (com_year-3); y <= (com_year); y++){
+        // 올해 기준으로 -1을 보여준다.
+        
+        for(var y = (com_year-1); y <= (com_year); y++){
             $("#YEAR").append("<option value='"+ y +"'>"+ y + " 년" +"</option>");
         }
         $("#YEAR").val(com_year).prop("selected", true); //셀렉트박스에서 벨류 값이 현재년도 인것 셀렉트 */
@@ -82,18 +82,18 @@
      	         	    },
      	         	    xAxis: {
      	         	        categories: [
-     	         	            'Jan',
-     	         	            'Feb',
-     	         	            'Mar',
-     	         	            'Apr',
-     	         	            'May',
-     	         	            'Jun',
-     	         	            'Jul',
-     	         	            'Aug',
-     	         	            'Sep',
-     	         	            'Oct',
-     	         	            'Nov',
-     	         	            'Dec'
+     	         	            '1월',
+     	         	            '2월',
+     	         	            '3월',
+     	         	            '4월',
+     	         	            '5월',
+     	         	            '6월',
+     	         	            '7월',
+     	         	            '8월',
+     	         	            '9월',
+     	         	            '10월',
+     	         	            '11월',
+     	         	            '12월'
      	         	        ],
      	         	        crosshair: true
      	         	    },
@@ -152,18 +152,18 @@
     	    	         	    },
     	    	         	    xAxis: {
     	    	         	        categories: [
-    	    	         	            'Jan',
-    	    	         	            'Feb',
-    	    	         	            'Mar',
-    	    	         	            'Apr',
-    	    	         	            'May',
-    	    	         	            'Jun',
-    	    	         	            'Jul',
-    	    	         	            'Aug',
-    	    	         	            'Sep',
-    	    	         	            'Oct',
-    	    	         	            'Nov',
-    	    	         	            'Dec'
+    	    	         	        	'1월',
+    	     	         	            '2월',
+    	     	         	            '3월',
+    	     	         	            '4월',
+    	     	         	            '5월',
+    	     	         	            '6월',
+    	     	         	            '7월',
+    	     	         	            '8월',
+    	     	         	            '9월',
+    	     	         	            '10월',
+    	     	         	            '11월',
+    	     	         	            '12월'
     	    	         	        ],
     	    	         	        crosshair: true
     	    	         	    },

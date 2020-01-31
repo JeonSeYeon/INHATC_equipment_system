@@ -35,7 +35,7 @@ public class BoardController {
 	public String getHome(@ModelAttribute("cri") Criteria cri, BoardVO vo, Locale locale, Model model, HttpSession ses)
 			throws Exception {
 
-		logger.info("환영합니다. IT기자재지원실 & PC지원실 관리 프로그램입니다.");
+		logger.info("환영합니다. IT지원실 관리 프로그램입니다.");
 		logger.info("현재 페이지와 페이지에 있는 글의 개수는 " + cri.toString());
 
 		model.addAttribute("boardList", service.listAll(vo, cri, ses));
@@ -54,7 +54,7 @@ public class BoardController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String postHome(@ModelAttribute("cri") Criteria cri, BoardVO vo, Locale locale, Model model, HttpSession ses)
 			throws Exception {
-		logger.info("환영합니다. IT기자재지원실 & PC지원실 관리 프로그램입니다.");
+		logger.info("환영합니다. IT지원실 관리 프로그램입니다.");
 		logger.info("현재 페이지와 페이지에 있는 글의 개수는 " + cri.toString());
 
 		model.addAttribute("boardList", service.listAll(vo, cri, ses));

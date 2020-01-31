@@ -19,6 +19,9 @@
 		sum(case when manager_classification = '공용PC실' then 1 else 0 end) as
 		share_classification,
 		
+		sum(case when manager_classification = '기타 - 회의실 등' then 1 else 0 end) as
+		etc_classification,
+		
 		count(manager_classification) as sum_classification
 		from board
 		where progress = "처리완료"

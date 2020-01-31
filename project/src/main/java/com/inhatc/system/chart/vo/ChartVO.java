@@ -6,6 +6,7 @@ public class ChartVO {
 	private String normal_classification;
 	private String sum_classification;
 	private String share_classification;
+	private String etc_classification;
 	private String year;
 	private String completedate;
 private String instrument;
@@ -63,6 +64,16 @@ public void setInstrument(String instrument) {
 	public void setYear(String year) {
 		this.year = year;
 	}
+
+	public String getEtc_classification() {
+		return etc_classification;
+	}
+
+	public void setEtc_classification(String etc_classification) {
+		this.etc_classification = etc_classification;
+	}
+	
+	
 	
 	
 }

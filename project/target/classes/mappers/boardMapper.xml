@@ -73,7 +73,7 @@
 	
 	<select id="listAll" resultType="com.inhatc.system.board.vo.BoardVO">
 		select
-		bno, manager_classification, manager_belong, instrument, client_name, client_local, regdate, progress, writer
+		bno, manager_classification, manager_belong, instrument, client_name, client_local, date_format(regdate, '%Y/%m/%d %H:%i') as regdate, progress, writer
 		from board
 		where bno>0
 		<include refid="searchCondition"></include>
@@ -134,7 +134,7 @@
 	
 	<select id="listAll_p" resultType="com.inhatc.system.board.vo.BoardVO">
 		select
-		bno, manager_classification, instrument, regdate, content
+		bno, manager_classification, instrument, date_format(regdate, '%Y/%m/%d %H:%i') as regdate, content
 		from board
 		where bno>0
 	</select>

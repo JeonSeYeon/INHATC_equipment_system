@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../css/user/login.css">
 
 	<form method="post" class="signUp" id="signupForm" name="signupForm">
-		<h3 class="signUpTitle">IT & PC지원실<br>- 로그인</h3>
+		<h3 class="signUpTitle">IT지원실<br>- 로그인</h3>
 		
 		<input type="text" id="id" name="id" class="signUpInput" placeholder="학번을 입력해주세요." autofocus required> 
 		<input type="password" id="pw" name="pw" class="signUpInput" placeholder="비밀번호를 입력해주세요." onkeypress="if(event.keyCode == 13){ fncLogin(); return;}" required> 
