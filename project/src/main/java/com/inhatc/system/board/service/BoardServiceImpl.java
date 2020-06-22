@@ -29,6 +29,7 @@ import com.inhatc.system.board.vo.Criteria;
 *   2019.01.29		전세연		교내 내선번호 추가, 수정, 삭제
 *   2019.01.31		전세연		주석 표시
 *   2020.01.31		전세연		최종 업데이트 및 기능 추가
+*   2020.05.02		전세연		게시판 형식 이장균T 버전으로 업데이트
 * </pre> **************************************************************************************/
 
 @Service
@@ -41,13 +42,13 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void regist(BoardVO board, HttpSession ses) throws Exception {
 		
-		String resultWriter = "";
+		/*String resultWriter = "";
 
 		resultWriter = (String) ses.getAttribute("LOGIN_NAME");
 
 		board.setWriter(resultWriter);
 
-		System.out.println("(Board_ServiceImpl) 작성자는 : " + resultWriter);
+		System.out.println("(Board_ServiceImpl) 작성자는 : " + resultWriter);*/
 
 		dao.create(board);
 	}
@@ -56,14 +57,14 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void updateIng(BoardVO board, HttpSession ses) throws Exception {
 		
-		String resultCompleteId = "";
+		/*String resultCompleteId = "";
 
 		resultCompleteId = (String) ses.getAttribute("LOGIN_NAME");
 
 		board.setCompleteId(resultCompleteId);
 
 		System.out.println("(Board_ServiceImpl) 처리할 사람의 이름은: " + resultCompleteId);
-
+*/
 		dao.updateIng(board);
 	}
 	
@@ -71,13 +72,13 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void updateEnd(BoardVO board, HttpSession ses) throws Exception {
 		
-		String resultCompleteId = "";
+		/*String resultCompleteId = "";
 
 		resultCompleteId = (String) ses.getAttribute("LOGIN_NAME");
 
 		board.setCompleteId(resultCompleteId);
 
-		System.out.println("(Board_ServiceImpl) 처리중인 사람의 이름은: " + resultCompleteId);
+		System.out.println("(Board_ServiceImpl) 처리중인 사람의 이름은: " + resultCompleteId);*/
 
 		dao.updateEnd(board);
 	}
@@ -115,7 +116,6 @@ public class BoardServiceImpl implements BoardService {
 		
 		String sessionBelong = "";
 		
-		String resultWriter = "";
 				
 		if(ses.getAttribute("LOGIN_BELONG") != null) {
 		sessionBelong = (String) ses.getAttribute("LOGIN_BELONG");
@@ -126,15 +126,7 @@ public class BoardServiceImpl implements BoardService {
 
 		}
 		
-		if(ses.getAttribute("LOGIN_NAME") != null){
-
-		resultWriter = (String) ses.getAttribute("LOGIN_NAME");
-
-		cri.setWriter(resultWriter);
-
-		System.out.println("(Board_ServiceImpl) 작성자는 : " + resultWriter);
-		
-		}else {
+		if(ses.getAttribute("LOGIN_NAME") == null){
 			
 			cri.setManager_belong("all");
 			cri.setWriter("익명");
@@ -220,6 +212,15 @@ public class BoardServiceImpl implements BoardService {
 		System.out.println("(Board_ServiceImpl) 출력 목록");
 		
 		return dao.listAll_p(board);
+	}
+	
+	/*기간 설정*/
+	@Override
+	public void printDate(BoardVO board) throws Exception {
+		
+		System.out.println("(Board_ServiceImpl) 기간 설정");
+		
+		dao.printDate(board);
 	}
 	
 }

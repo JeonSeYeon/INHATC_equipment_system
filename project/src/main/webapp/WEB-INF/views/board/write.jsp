@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.io.PrintWriter"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="/css/board/common.css">
 <link rel="stylesheet" href="/css/board/default.css">
 <link rel="stylesheet" href="/css/board/content.css">
+
 <script src="http://code.jquery.com/jquery.js"></script>
 <%
 	String userID = null;
@@ -34,70 +36,117 @@
 
 <div class="pop_wrap" id="popUpLayerId">
 	<div class="pop_tit">
-		<span>등록하기</span>
+		<span>게시물 등록하기</span>
 	</div>
 	<div class="pop_content">
 		<form action="/board/register" method="post">
 			<table class="pop_table">
 				<tbody>
 				<colgroup>
-					<col width="120px">
+					<col width="150px">
+					<col width="*">
+					<col width="150px">
 					<col width="*">
 				</colgroup>
 
 
 
 				<tr>
-					<th>담당소속</th>
-					<td><select name="manager_belong">
-							<option value="IT지원실" selected="selected">IT지원실</option>
-							<option value="PC지원실">PC지원실</option>
-					</select></td>
+					<th>의뢰</th>
+				</tr>
+				
+				<tr>
 					<th>작업분류</th>
 					<td><select name="manager_classification">
-							<option value="실습실" selected="selected">실습실</option>
-							<option value="행정연구실">행정연구실</option>
-							<option value="일반강의실">일반강의실</option>
-							<option value="공용PC실">공용PC실</option>
-							<option value="기타 - 회의실 등">기타 - 회의실 등</option>
+							<option value="PC실습실" selected="selected">PC실습실</option>
+							<option value="행정사무실">행정사무실</option>
+							<option value="강의실">강의실</option>
+							<option value="교수실">교수실</option>
+							<option value="기타">기타</option>
 					</select></td>
+					
+					
 				</tr>
 
 				<tr>
-					<th>내선번호</th>
-					<td><input type="text" placeholder="전화번호" name="client_number" id="client_number" class="form-control" >
-						<button type="button" id="numberBtn" class="button">조회</button></td>
+					<th>연락처</th>
+					<td><input type="text" placeholder="연락처를 입력해주세요." name="client_number" id="client_number" class="form-control" >
+						<!-- <button type="button" id="numberBtn" class="button">조회</button></td> -->
+					
 					<th>이름</th>
-					<td><input type="text" placeholder="이름" name="client_name"	id="client_name" class="form-control"></td>
+					<td><input type="text"  placeholder="이름을 입력해주세요." name="client_name"	id="client_name" class="form-control"></td>
+					
 					
 				</tr>
 				
 				<tr>
-					<th>소속</th>
-					<td><input type="text" placeholder="소속" name="client_belong" id="client_belong" class="form-control"/></td>
+					<th>의뢰소속</th>
+					<td><select name="client_belong">
+							<option value="교수" selected="selected">교수</option>
+							<option value="직원">직원</option>
+							<option value="학생">학생</option>
+							<option value="기타">기타</option>
+					</select></td>
 					<th>위치</th>
-					<td><input type="text" placeholder="위치" name="client_local" id="client_local" class="form-control"></td>
+					<td><input type="text"  placeholder="위치를 입력해주세요." name="client_local" id="client_local" class="form-control"></td>
+				
+				
 				</tr>
+				
 
 				<tr>
 					<th>기기종류</th>
 					<td colspan="3"><input type="radio" name="instrument" value="1">모니터
-						<input type="radio" name="instrument" value="2">프린터 <input
-						type="radio" name="instrument" value="3">PC <input
-						type="radio" name="instrument" value="4">인터넷 <input
-						type="radio" name="instrument" value="5">전화기 <input
-						type="radio" name="instrument" value="6">프로젝터 빔
-						<input type="radio" name="instrument" value="7">앰프 
-						<br> <input type="radio" name="instrument" value="8">소프트웨어 설치
+						<input type="radio" name="instrument" value="2">프린터
+						<input type="radio" name="instrument" value="3">PC
+						<input type="radio" name="instrument" value="4">인터넷
+						<input type="radio" name="instrument" value="5">전화기
+						<input type="radio" name="instrument" value="6">프로젝터 빔
+						<input type="radio" name="instrument" value="7">앰프
+						<input type="radio" name="instrument" value="8">소프트웨어 설치
 						<input type="radio" name="instrument" value="10">소프트웨어 인증
 						<input type="radio" name="instrument" value="11">Net-class 관련
 						<input type="radio" name="instrument" value="9">기타</td>
-				</tr>
 
-				<tr>
-					<th>내용</th>
-					<td colspan="3"><textarea name="content" class="form-control" type="text">요구사항: <%="\n"%>-----------------------------------------------------<%="\n"%>처리자: <%="\n"%>처리사항: </textarea></td>
 				</tr>
+				</table>
+				
+				<table class="pop_table">
+				<tbody>
+				<colgroup>
+					<col width="150px">
+					<col width="*">
+					<col width="150px">
+					<col width="*">
+				</colgroup>
+					<tr>
+						<th>접수</th>
+					</tr>
+					<tr>
+						<th>접수자</th>
+						<td><input type="text" placeholder="접수자를 입력해주세요." name="writer" id="writer" class="form-control"/></td>
+					</tr>
+					
+					<tr>
+						<th>접수내용</th>
+						<td colspan="3"><textarea placeholder="접수내용을 입력해주세요." name="content" class="form-control" type="text"></textarea></td>
+					</tr>
+					
+					
+					<%-- <tr>
+					
+						<c:if test="${boardVO.progress eq '처리중'}">
+						<th>처리자</th>
+						<td><input type="text" placeholder="처리자를 입력해주세요." name="completeId" id="completeId" class="form-control"></td>
+						</c:if>
+					</tr>
+					<tr>
+						<c:if test="${boardVO.progress eq '처리중'}">
+						<th>처리내용</th>
+						<td colspan="3"><textarea placeholder="처리내용을 입력해주세요." name="completeContent" class="form-control" type="text"></textarea></td>
+						</c:if>
+					</tr> --%>
+					
 				</tbody>
 			</table>
 			<div class="button_rtbox">
@@ -177,6 +226,12 @@
 
 											if ($("#client_name").val() == "") {
 												alert("이름을 입력해주세요.");
+												$("#client_name").focus();
+												return false;
+											}
+											
+											if ($("#writer").val() == "") {
+												alert("접수자를 입력해주세요.");
 												$("#client_name").focus();
 												return false;
 											}

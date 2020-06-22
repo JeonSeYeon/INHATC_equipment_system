@@ -26,7 +26,7 @@ import com.inhatc.system.board.vo.Criteria;
 *   2019.01.29		전세연		교내 내선번호 추가, 수정, 삭제
 *   2019.01.31		전세연		주석 표시
 *   2020.01.31		전세연		최종 업데이트 및 기능 추가
-* 
+* 	2020.05.02		전세연		게시판 형식 이장균T 버전으로 업데이트
 * </pre> **************************************************************************************/
 
 public interface BoardDAO {
@@ -181,6 +181,8 @@ public interface BoardDAO {
 	 * @return List<BoardVO>
 	 * @throws Exception
 	 */
+	
+	public List<BoardVO> printDate(BoardVO board) throws Exception;
 	
 	
 }

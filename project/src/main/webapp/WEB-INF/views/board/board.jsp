@@ -16,7 +16,8 @@ function fncWrite() {
 			location.href='/';
 			return false;
 		} else {
-			gfnOpenPop('/board/write', '등록', '736', '500');
+			//location.href='/board/write';
+			gfnOpenPop('/board/write', '등록', '780', '550');
 			return false;
 		}
 	
@@ -29,7 +30,7 @@ function fncView(idx) {
 			return false;
 		
 	 }else {
-			gfnOpenPop('/board/read?bno=' + idx, '상세보기', '736', '500');
+			gfnOpenPop('/board/read?bno=' + idx, '상세보기', '780', '550');
 			return false;
 		}
 
@@ -130,28 +131,34 @@ text-align: center;
 						<div class="panel-body">
 						<table class="table table-striped table-bordered table-hover">
 							<colgroup>
+									<col width="8%"/>
 									<col width="10%"/>
 									<col width="10%"/>
 									<col width="10%"/>
 									<col width="10%"/>
-									<col width="15%"/>
-									<col width="10%"/>
-									<col width="*"/>
 									<col width="10%"/>
 									<col width="10%"/>
+									<col width="10%"/>
+									<col width="20%"/>
+									<col width="5%"/>
+									<col width="10%"/>
+									<col width="5%"/>
 							</colgroup>
 							<thead>
 								
 								<tr>
 										<th>접수번호</th>
-										<th>작업분류</th>
-										<th>담당소속</th>
-										<th>기계명</th>
-										<th>의뢰인</th>
-										<th>위치</th>
 										<th>의뢰받은시간</th>
-										<th>작성자</th>
-										<th>현황</th>
+										<th>의뢰인</th>
+										<th>의뢰부서</th>
+										<th>위치</th>
+										<th>작업분류</th>
+										<th>연락처</th>
+										<th>접수 품목</th>
+										<th>접수 내용</th>
+										<th>처리자</th>
+										<th>진행상태</th>
+										<th>접수자</th>
 								</tr>
 							</thead>
 							<c:choose>
@@ -162,32 +169,36 @@ text-align: center;
 								<!-- Start: list_row -->
 								<tr>
 									<td>${boardList[rowIndex.index].bno}</td>
-													<td>${boardList[rowIndex.index].manager_classification}</a></td>
-													<td>${boardList[rowIndex.index].manager_belong}</td>
-													<td ><c:if test="${boardList[rowIndex.index].instrument == '1'}">모니터</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '2'}">프린터</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '3'}">PC</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '4'}">인터넷</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '5'}">전화기</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '6'}">프로젝터 빔</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '7'}">앰프</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '8'}">소프트웨어 설치</c:if>						
-														<c:if test="${boardList[rowIndex.index].instrument == '9'}">기타</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '10'}">소프트웨어 인증</c:if>
-														<c:if test="${boardList[rowIndex.index].instrument == '11'}">Net-class 관련</c:if>
-														</td>
-													<td>${boardList[rowIndex.index].client_name}</td>	
-													<td>${boardList[rowIndex.index].client_local}</td>
-													<td>${boardList[rowIndex.index].regdate}</td>
-													<td>${boardList[rowIndex.index].writer}</td>
-													<td><a href="#" onclick="fncView('${boardList[rowIndex.index].bno}');" ><c:if test="${boardList[rowIndex.index].progress == '처리완료'}"><font color="blue" >
+									<td>${boardList[rowIndex.index].regdate}</td>
+									<td>${boardList[rowIndex.index].client_name}</td>	
+									<td>${boardList[rowIndex.index].client_belong}</td>
+									<td>${boardList[rowIndex.index].client_local}</td>
+									<td>${boardList[rowIndex.index].manager_classification}</td>
+									<td>${boardList[rowIndex.index].client_number}</td>
+									<td ><c:if test="${boardList[rowIndex.index].instrument == '1'}">모니터</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '2'}">프린터</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '3'}">PC</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '4'}">인터넷</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '5'}">전화기</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '6'}">프로젝터 빔</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '7'}">앰프</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '8'}">소프트웨어 설치</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '10'}">소프트웨어 인증</c:if>
+									<c:if test="${boardList[rowIndex.index].instrument == '11'}">Net-class 관련</c:if>						
+									<c:if test="${boardList[rowIndex.index].instrument == '9'}">기타</c:if>
+									</td>
+									<td>${boardList[rowIndex.index].content}</td>
+									<td>${boardList[rowIndex.index].completeId}</td>
+									<td><a href="#" onclick="fncView('${boardList[rowIndex.index].bno}');" ><c:if test="${boardList[rowIndex.index].progress == '처리완료'}"><font color="blue" >
 처리완료</font></c:if><c:if test="${boardList[rowIndex.index].progress == '처리중'}"><font color="green">처리중</font></c:if><c:if test="${boardList[rowIndex.index].progress == '처리대기'}"><font color="red">처리대기</font></c:if></a></td>
+									<td>${boardList[rowIndex.index].writer}</td>
+								
 								</tr>
 								</c:forEach>
 									</c:when>
 									<c:otherwise>
 										<tr>
-											<td colspan="9">조회된 결과가 없습니다.</td>
+											<td colspan="12">조회된 결과가 없습니다.</td>
 										</tr>
 									</c:otherwise>
 								</c:choose>

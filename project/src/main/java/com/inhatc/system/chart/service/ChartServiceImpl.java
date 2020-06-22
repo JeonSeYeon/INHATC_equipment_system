@@ -30,6 +30,7 @@ public class ChartServiceImpl implements ChartService {
 		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
 		
 		List<String> instrumentList = chartDAO.getinstrumentListDataName();
+		
 		String ins_name="";
 		for(int i = 0; i < instrumentList.size(); i++) {
 			Map<String, Object> getChartData2 = new HashMap<String, Object>();

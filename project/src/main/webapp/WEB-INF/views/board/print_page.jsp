@@ -9,7 +9,16 @@
 <jsp:include page="/WEB-INF/views/includes/home.jsp" flush="true" />
 <jsp:include page="/WEB-INF/views/includes/header.jsp" flush="true" />
 
+
 <link rel="stylesheet" href="/css/board/content.css">
+<link rel="stylesheet" href="/calendar/daterangepicker.css">
+<script src="/js/main/util.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="/calendar/jquery-1.11.2.min.js"></script>
+<script src="/calendar/moment.min.js"></script>
+<script src="/calendar/jquery.daterangepicker.js"></script>
+<script src="/calendar/demo.js"></script>
+
 <%
 	String userID = null;
 	System.out.println(session.getAttribute("LOGIN_BELONG"));
@@ -61,17 +70,40 @@ table.type04 td {
     vertical-align: top;
     border-bottom: 1px solid #ccc;
 }
+#wrapper
+		{
+			width:800px;
+			margin:0 auto;
+			color:#333;
+			font-family:Tahoma;
+			line-height:1.5;
+			font-size:14px;
+		}
+		.demo { margin:30px 0;}
+		.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
+		.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
+		.date-picker-wrapper.date_range-picker19 .day.first-date-selected { background-color: red !important; }
+		.date-picker-wrapper.date_range-picker19 .day.last-date-selected { background-color: orange !important; }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/css/board/common.css">
 <link rel="stylesheet" href="/css/board/default.css">
 <link rel="stylesheet" href="/css/board/content.css">
+
 <script type="text/javascript">
 
-var goPrints = function(title){
- window.print();
-
-   };
+	var goPrints = function(title){
+	 window.print();
+	
+	   };
+   $(function()
+			{
+				$('a.show-option').click(function(evt)
+				{
+					evt.preventDefault();
+					$(this).siblings('.options').slideToggle();
+				});
+			})
    </script>
 <!-- 프린트를 위해 따로 나눠준 자바스크립트 파일 -->
 </head>
@@ -80,6 +112,17 @@ var goPrints = function(title){
 	<form>
 		<span style="margin-top:50px;" class="button bt02"><input type="button" value="출력하기" onclick="goPrints(title);" /></span>
 	</form>
+	
+	<div id="wrapper">
+		<form action="/print/date" method="post">
+			<div class="demo">
+				기간설정: <input type="text" id="date_range0" name="date_range0" size="40" value=""> 
+				
+			</div>
+			
+			<button>gogo</button>
+		</form>
+	</div>
 
 <div id="printarea">
 <!-- 프린트 하기위한 영역 -->
@@ -142,6 +185,7 @@ var goPrints = function(title){
 
 </body>
 </html>
+
 
 
 

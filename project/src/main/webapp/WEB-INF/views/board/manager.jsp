@@ -66,9 +66,9 @@
 				</tbody>
 			</table>
 				
-				<span class="button bt01"><button type="submit" id="submitBtn2" class="button" onclick="javascript: form.action='/managerInsert';" >추가하기</button></span>
+				<span class="button bt01"><button type="submit" id="submitBtn1" class="button" onclick="javascript: form.action='/managerInsert';" >추가하기</button></span>
 				
-				<span class="button bt01"><button type="submit" id="submitBtn1" class="button" onclick="javascript: form.action='/managerModify';">수정하기</button></span>
+				<span class="button bt01"><button type="submit" id="submitBtn2" class="button" onclick="javascript: form.action='/managerModify';">수정하기</button></span>
 					
 				<span class="button bt01"><button type="submit" class="button" id="submitBtn3" onclick="javascript: form.action='/managerDelete';">삭제하기</button></span>
 			</form>
@@ -154,6 +154,9 @@
 								$("#client_local").focus();
 								return false;
 							}
+							if (confirm('등록하시겠습니까?') == true){ 
+							}
+							else{ return false; }
 
 							
 
@@ -182,7 +185,9 @@
 								$("#client_local").focus();
 								return false;
 							}
-
+							if (confirm('수정하시겠습니까?') == true){ 
+							}
+							else{ return false; }
 							
 
 						});
@@ -210,7 +215,9 @@
 								$("#client_local").focus();
 								return false;
 							}
-
+							if (confirm('삭제하시겠습니까?') == true){ 
+							}
+							else{ return false; }
 							
 
 						});

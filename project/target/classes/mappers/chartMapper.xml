@@ -7,19 +7,19 @@
 		resultType="com.inhatc.system.chart.vo.ChartVO">
 		select
 		SUBSTRING(completedate,6,2) as year,
-		sum(case when manager_classification = '행정연구실' then 1 else 0 end) as
+		sum(case when manager_classification = '행정사무실' then 1 else 0 end) as
 		research_classification,
 		
-		sum(case when manager_classification = '실습실' then 1 else 0 end) as
+		sum(case when manager_classification = 'PC실습실' then 1 else 0 end) as
 		practice_classification,
 		
-		sum(case when manager_classification = '일반강의실' then 1 else 0 end) as
+		sum(case when manager_classification = '강의실' then 1 else 0 end) as
 		normal_classification,
 		
-		sum(case when manager_classification = '공용PC실' then 1 else 0 end) as
+		sum(case when manager_classification = '교수실' then 1 else 0 end) as
 		share_classification,
 		
-		sum(case when manager_classification = '기타 - 회의실 등' then 1 else 0 end) as
+		sum(case when manager_classification = '기타 ' then 1 else 0 end) as
 		etc_classification,
 		
 		count(manager_classification) as sum_classification

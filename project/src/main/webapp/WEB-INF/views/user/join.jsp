@@ -70,9 +70,7 @@
 						<c:set var="data" value="${UserVO.manager_belong}" />
 						<option value="" selected>선택해주세요.</option>
 					    <option value="IT지원실" <c:if test="${data eq 'IT지원실'}">selected</c:if>>IT지원실</option>
-					    <option value="PC지원실" <c:if test="${data eq 'PC지원실'}">selected</c:if>>PC지원실</option>
 					    <option value="관리자" <c:if test="${data eq '관리자'}">selected</c:if>>관리자</option>
-						<option value="내비게이션" <c:if test="${data eq '내비게이션'}">selected</c:if>>내비게이션</option>
 					</select></td>
 
 					</tr>
@@ -158,7 +156,10 @@ $(document).ready(function(){
 								$("#manager_belong").focus();
 								return false;
 							}
-
+							
+							if (confirm('등록하시겠습니까?') == true){ 
+								}
+							else{ return false; }
 							
 
 						});
@@ -186,7 +187,9 @@ $(document).ready(function(){
 								$("#manager_belong").focus();
 								return false;
 							}
-
+							if (confirm('수정하시겠습니까?') == true){ 
+							}
+							else{ return false; }
 							
 
 						});
@@ -214,7 +217,9 @@ $(document).ready(function(){
 								$("#manager_belong").focus();
 								return false;
 							}
-
+							if (confirm('삭제하시겠습니까?') == true){ 
+							}
+							else{ return false; }
 							
 
 						});

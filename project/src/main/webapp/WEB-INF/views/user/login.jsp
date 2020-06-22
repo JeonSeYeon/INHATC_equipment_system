@@ -33,7 +33,7 @@ function fncLogin() {
 			if (response == "N") {
 				alert("아이디 또는 비밀번호가 잘못되었습니다.");
 			} else {
-				alert("로그인 성공!");
+				alert("로그인이 정상적으로 되었습니다.");
 				location.href='/';
 			}
 		},

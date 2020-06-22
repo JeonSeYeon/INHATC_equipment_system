@@ -4,20 +4,22 @@ package com.inhatc.system.board.vo;
 public class BoardVO {
 
 	private Integer bno; //글번호
-	private String manager_classification; //작업분류
-	private String manager_belong; //소속 (IT기가재, PC지원실)
+	private String manager_classification; //작업분류(PC실습실, 강의실)
+	private String manager_belong; //소속 (IT기가재, PC지원실 )
 	private String client_number; //전화번호
 	private String client_belong; //의뢰인 소속
 	private String client_local; //위치
 	private String client_name; //이름
 	private String instrument; //고장기자재(프린터, 앰프 ...)
-	private String content; //내용
+	private String content; //접수내용
 	private String progress; //처리상황(대기, 처리중, 처리완료)
-	private String completeId;
-	private String completeDate;
-	private String regdate; //날짜-시간
-	private String writer;
+	private String completeContent; //처리내용
+	private String completeId; //처리자
+	private String completeDate; //처리한 날짜
+	private String regdate; //접수 날짜
+	private String writer; //작성자
 	private String show;
+	private String date_range0;
 	
 	public Integer getBno() {
 		return bno;
@@ -109,6 +111,20 @@ public class BoardVO {
 	public void setShow(String show) {
 		this.show = show;
 	}
+	public String getCompleteContent() {
+		return completeContent;
+	}
+	public void setCompleteContent(String completeContent) {
+		this.completeContent = completeContent;
+	}
+	public String getDate_range0() {
+		return date_range0;
+	}
+	public void setDate_range0(String date_range0) {
+		this.date_range0 = date_range0;
+	}
+	
+	
 	
 	
 }

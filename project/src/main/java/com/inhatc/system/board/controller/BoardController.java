@@ -87,14 +87,13 @@ public class BoardController {
 		System.out.println("(BoardControllor) 전화번호는 : " + board.getClient_number()); // 전화번호
 		System.out.println("(BoardControllor) 소속은 : " + board.getClient_belong()); // 의뢰인 소속
 		System.out.println("(BoardControllor) 이름은 : " + board.getClient_name()); // 의뢰인 이름
-		System.out.println("(BoardControllor) 담당소속은 : " + board.getManager_belong()); // 작업 분류
 
 		service.regist(board, ses);
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.println("<script>alert('등록이 완료되었습니다.'); window.opener.location.reload(); window.close(); </script>");
-		out.flush();
+		//out.flush();
 	}
 
 	/*change updateStart -> updateIng*/
@@ -166,8 +165,10 @@ public class BoardController {
 		System.out.println("(BoardControllor) 작업분류는 : " + board.getManager_classification());
 		System.out.println("(BoardControllor) 위치는 : " + board.getClient_local());
 		System.out.println("(BoardControllor) 기기종류는 : " + board.getInstrument());
-		System.out.println("(BoardControllor) 작성자는 : " + board.getWriter());
-		System.out.println("(BoardControllor) 내용은 : " + board.getContent());
+		System.out.println("(BoardControllor) 접수자는 : " + board.getWriter());
+		System.out.println("(BoardControllor) 요구사항은 : " + board.getContent());
+		System.out.println("(BoardControllor) 처리사항은 : " + board.getCompleteContent());
+		System.out.println("(BoardControllor) 처리자는 : " + board.getCompleteId());
 
 		service.modify(board, ses);
 
@@ -300,6 +301,16 @@ public class BoardController {
 
 	return "board/error";
 
+	}
+	
+	
+	/* print date */
+	@RequestMapping(value = "/print/date", method = RequestMethod.POST)
+	public void printDatePost(BoardVO board) throws Exception {
+		logger.info("(BoardControllor) 기간별 작업 인쇄용 출력");
+		logger.info(board.toString());
+
+		service.printDate(board);
 	}
 }
 

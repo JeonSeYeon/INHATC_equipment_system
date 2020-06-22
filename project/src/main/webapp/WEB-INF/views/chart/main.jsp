@@ -40,8 +40,7 @@
         var year = "";
         // 발행 뿌려주기
         $("#YEAR").append("<option value=''>년도</option>");
-        // 올해 기준으로 -1을 보여준다.
-        
+        // 올해 기준으로 -1년부터 +5년을 보여준다.
         for(var y = (com_year-1); y <= (com_year); y++){
             $("#YEAR").append("<option value='"+ y +"'>"+ y + " 년" +"</option>");
         }
@@ -82,18 +81,18 @@
      	         	    },
      	         	    xAxis: {
      	         	        categories: [
-     	         	            '1월',
-     	         	            '2월',
-     	         	            '3월',
-     	         	            '4월',
-     	         	            '5월',
-     	         	            '6월',
-     	         	            '7월',
-     	         	            '8월',
-     	         	            '9월',
-     	         	            '10월',
-     	         	            '11월',
-     	         	            '12월'
+     	         	            'Jan',
+     	         	            'Feb',
+     	         	            'Mar',
+     	         	            'Apr',
+     	         	            'May',
+     	         	            'Jun',
+     	         	            'Jul',
+     	         	            'Aug',
+     	         	            'Sep',
+     	         	            'Oct',
+     	         	            'Nov',
+     	         	            'Dec'
      	         	        ],
      	         	        crosshair: true
      	         	    },
@@ -152,18 +151,18 @@
     	    	         	    },
     	    	         	    xAxis: {
     	    	         	        categories: [
-    	    	         	        	'1월',
-    	     	         	            '2월',
-    	     	         	            '3월',
-    	     	         	            '4월',
-    	     	         	            '5월',
-    	     	         	            '6월',
-    	     	         	            '7월',
-    	     	         	            '8월',
-    	     	         	            '9월',
-    	     	         	            '10월',
-    	     	         	            '11월',
-    	     	         	            '12월'
+    	    	         	            'Jan',
+    	    	         	            'Feb',
+    	    	         	            'Mar',
+    	    	         	            'Apr',
+    	    	         	            'May',
+    	    	         	            'Jun',
+    	    	         	            'Jul',
+    	    	         	            'Aug',
+    	    	         	            'Sep',
+    	    	         	            'Oct',
+    	    	         	            'Nov',
+    	    	         	            'Dec'
     	    	         	        ],
     	    	         	        crosshair: true
     	    	         	    },

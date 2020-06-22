@@ -75,27 +75,27 @@ public class ChartController {
 
 		}
 		classificationInfo.put("data", list);
-		classificationInfo.put("name", "행정연구실");
+		classificationInfo.put("name", "행정사무실");
 		classificationArray.add(classificationInfo);
 		
 		classificationInfo = new JSONObject();
 		classificationInfo.put("data", list2);
-		classificationInfo.put("name", "실습실");
+		classificationInfo.put("name", "PC실습실");
 		classificationArray.add(classificationInfo);
 		
 		classificationInfo = new JSONObject();
 		classificationInfo.put("data", list3);
-		classificationInfo.put("name", "일반강의실");
+		classificationInfo.put("name", "강의실");
 		classificationArray.add(classificationInfo);
 		
 		classificationInfo = new JSONObject();
 		classificationInfo.put("data", list4);
-		classificationInfo.put("name", "공용PC실");
+		classificationInfo.put("name", "교수실");
 		classificationArray.add(classificationInfo);
 		
 		classificationInfo = new JSONObject();
 		classificationInfo.put("data", list5);
-		classificationInfo.put("name", "기타 - 회의실 등");
+		classificationInfo.put("name", "기타");
 		classificationArray.add(classificationInfo);
 
 		classificationInfo = new JSONObject();

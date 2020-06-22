@@ -32,6 +32,7 @@ xmlns:mvc="http://www.springframework.org/schema/mvc"
 	<resources mapping="/fonts/**" location="/WEB-INF/resources/fonts/" />
 	<resources mapping="/plugins/**" location="/WEB-INF/resources/plugins/" />
 	<resources mapping="/images/**" location="/WEB-INF/resources/images/" />
+	<resources mapping="/calendar/**" location="/WEB-INF/resources/calendar/" />
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean

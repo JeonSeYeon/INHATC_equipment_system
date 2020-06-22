@@ -1,12 +1,12 @@
 package com.inhatc.system.chart.vo;
 
 public class ChartVO {
-	private String research_classification;
-	private String practice_classification;
-	private String normal_classification;
-	private String sum_classification;
-	private String share_classification;
-	private String etc_classification;
+	private String research_classification; //행정연구실
+	private String practice_classification; //실습실
+	private String normal_classification; //일반강의실
+	private String sum_classification; 
+	private String share_classification; //공용PC실
+	private String etc_classification; //기타
 	private String year;
 	private String completedate;
 private String instrument;
