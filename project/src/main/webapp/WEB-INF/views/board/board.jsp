@@ -150,9 +150,9 @@ text-align: center;
 										<th>접수번호</th>
 										<th>의뢰받은시간</th>
 										<th>의뢰인</th>
-										<th>의뢰부서</th>
+										<th>소속</th>
 										<th>위치</th>
-										<th>작업분류</th>
+										<th>실 구분</th>
 										<th>연락처</th>
 										<th>접수 품목</th>
 										<th>접수 내용</th>
@@ -190,7 +190,7 @@ text-align: center;
 									<td>${boardList[rowIndex.index].content}</td>
 									<td>${boardList[rowIndex.index].completeId}</td>
 									<td><a href="#" onclick="fncView('${boardList[rowIndex.index].bno}');" ><c:if test="${boardList[rowIndex.index].progress == '처리완료'}"><font color="blue" >
-처리완료</font></c:if><c:if test="${boardList[rowIndex.index].progress == '처리중'}"><font color="green">처리중</font></c:if><c:if test="${boardList[rowIndex.index].progress == '처리대기'}"><font color="red">처리대기</font></c:if></a></td>
+처리완료</font></c:if><c:if test="${boardList[rowIndex.index].progress == '처리중'}"><font color="red">처리중</font></c:if></a></td>
 									<td>${boardList[rowIndex.index].writer}</td>
 								
 								</tr>

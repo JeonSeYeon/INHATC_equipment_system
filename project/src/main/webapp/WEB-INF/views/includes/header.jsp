@@ -65,13 +65,13 @@ function fncPrint() {
 	<div class="container-fluid expanded-panel">
 		<div class="row">
 			<div id="logo" class="col-xs-12	 col-sm-2">
-				<a href="/">I N H A T C</a>
+				<a href="/"><img src="../../img/logo.png" alt="/" width="100" height="50" align="center" border="0"></a>
 			</div>
 			<div id="top-panel" class="col-xs-12 col-sm-10">
 				<div class="row">
 					<div class="col-xs-8 col-sm-4">
 					<form action="/board/print" method="post" name="form">
-						<a href="/chart"  class="dropdown-toggle" > <i class="fa fa-bar-chart-o" ></i> <span class="hidden-xs">Chart</span></a>
+						<a href="/chart"  class="dropdown-tog gle" > <i class="fa fa-bar-chart-o" ></i> <span class="hidden-xs">Chart</span></a>
 						
 						 
 						<c:if test="${sessionScope.LOGIN_BELONG eq '관리자'}">

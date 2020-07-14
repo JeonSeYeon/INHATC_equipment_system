@@ -183,5 +183,5 @@ public interface BoardService {
 	 * @throws Exception
 	 */
 	
-	public void printDate(BoardVO board) throws Exception;
+	public List<BoardVO> printDate(BoardVO board,  HttpSession ses) throws Exception;
 }

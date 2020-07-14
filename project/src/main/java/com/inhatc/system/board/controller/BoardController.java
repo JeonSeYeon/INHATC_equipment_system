@@ -288,7 +288,7 @@ public class BoardController {
 		logger.info("(BoardControllor)  내용은 " + board.toString());
 
 		
-		return "/board/print_page";
+		return "board/print_page";
 	}
 	
 	@ExceptionHandler(RuntimeException.class)
@@ -303,14 +303,27 @@ public class BoardController {
 
 	}
 	
+	/* print date 
+	@RequestMapping(value = "/print/date", method = RequestMethod.GET)
+	public String printDateGet(BoardVO board, HttpSession ses, Model model) throws Exception {
+		model.addAttribute("boardList", service.printDate(board, ses));
+		System.out.println("(BoardControllor) GET : " + board.getDate_range0());
+		
+		return "/board/print_page";
+	}*/
 	
 	/* print date */
 	@RequestMapping(value = "/print/date", method = RequestMethod.POST)
-	public void printDatePost(BoardVO board) throws Exception {
+	public String printDatePost(BoardVO board, HttpSession ses, Model model) throws Exception {
 		logger.info("(BoardControllor) 기간별 작업 인쇄용 출력");
 		logger.info(board.toString());
-
-		service.printDate(board);
+		System.out.println("(BoardControllor) 기간은 : " + board.getDate_range0());
+		
+		
+		model.addAttribute("boardList", service.printDate(board, ses));
+		
+		
+		return "board/print_page";
 	}
 }
 

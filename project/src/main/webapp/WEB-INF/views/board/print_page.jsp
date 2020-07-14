@@ -127,21 +127,23 @@ table.type04 td {
 <div id="printarea">
 <!-- 프린트 하기위한 영역 -->
 <table width="*" cellspacing="1" border="0" class="type04" >
-							<colgroup>
-									<col width="10%"/>
-									<col width="10%"/>
-									<col width="15%"/>
-									<col width="15%"/>
-									<col width="*%"/>
-							</colgroup>
+						
 							<thead>
 								
 								<tr>
-										<th>접수번호</th>
-										<th>작업분류</th>
-										<th>기계명</th>
-										<th>의뢰받은시간</th>
-										<th>내용</th>
+										<th>번호</th>
+										<th>접수일자</th>
+										<th>의뢰인</th>
+										<th>소속</th>
+										<th>위치(호관-호실)</th>
+										<th>실 구분</th>
+										<th>연락처</th>
+										<th>접수품목</th>
+										<th>접수내용</th>
+										<th>처리내용</th>
+										<th>접수자</th>
+										<th>완료일자</th>
+										<th>처리자</th>
 								</tr>
 							</thead>
 							<c:choose>
@@ -152,7 +154,12 @@ table.type04 td {
 								<!-- Start: list_row -->
 								<tr>
 									<td>${boardList[rowIndex.index].bno}</td>
-									<td>${boardList[rowIndex.index].manager_classification}</a></td>
+									<td>${boardList[rowIndex.index].regdate}</td>
+									<td>${boardList[rowIndex.index].client_name}</td>
+									<td>${boardList[rowIndex.index].client_belong}</td>
+									<td>${boardList[rowIndex.index].client_local}</td>
+									<td>${boardList[rowIndex.index].manager_classification}</td>
+									<td>${boardList[rowIndex.index].client_number}</td>
 									<td ><c:if test="${boardList[rowIndex.index].instrument == '1'}">모니터</c:if>
 										<c:if test="${boardList[rowIndex.index].instrument == '2'}">프린터</c:if>
 										<c:if test="${boardList[rowIndex.index].instrument == '3'}">PC</c:if>
@@ -166,8 +173,11 @@ table.type04 td {
 										<c:if test="${boardList[rowIndex.index].instrument == '11'}">Net-class 관련</c:if>
 										</td>
 									
-									<td >${boardList[rowIndex.index].regdate} </td>
-									<td>${boardList[rowIndex.index].content}</td>
+									<td>${boardList[rowIndex.index].content} </td>
+									<td>${boardList[rowIndex.index].completeContent}</td>
+									<td>${boardList[rowIndex.index].writer}</td>
+									<td>${boardList[rowIndex.index].completeDate}</td>
+									<td>${boardList[rowIndex.index].completeId}</td>
 								</tr>
 								</c:forEach>
 									</c:when>

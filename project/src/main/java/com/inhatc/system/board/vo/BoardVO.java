@@ -20,7 +20,18 @@ public class BoardVO {
 	private String writer; //ÀÛ¼ºÀÚ
 	private String show;
 	private String date_range0;
+	private String date_start;
+	private String date_end;
+	private String call_classification;
+	private Integer n_bno;
 	
+	
+	public Integer getN_bno() {
+		return n_bno;
+	}
+	public void setN_bno(Integer n_bno) {
+		this.n_bno = n_bno;
+	}
 	public Integer getBno() {
 		return bno;
 	}
@@ -122,6 +133,24 @@ public class BoardVO {
 	}
 	public void setDate_range0(String date_range0) {
 		this.date_range0 = date_range0;
+	}
+	public String getCall_classification() {
+		return call_classification;
+	}
+	public void setCall_classification(String call_classification) {
+		this.call_classification = call_classification;
+	}
+	public String getDate_start() {
+		return date_start;
+	}
+	public void setDate_start(String date_start) {
+		this.date_start = date_start;
+	}
+	public String getDate_end() {
+		return date_end;
+	}
+	public void setDate_end(String date_end) {
+		this.date_end = date_end;
 	}
 	
 	

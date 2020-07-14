@@ -5,9 +5,9 @@
 
 	<insert id="create">
 		insert into board (manager_classification, manager_belong, client_number, client_belong,
-		client_local, client_name, instrument, content, progress, completeId, completeDate, writer, regdate)
-		values(#{manager_classification},#{manager_belong}, #{client_number}, #{client_belong}, #{client_local}, #{client_name},
-		#{instrument}, #{content},'처리대기', ' ', 0, #{writer}, SYSDATE());
+		client_local, client_name, call_classification, instrument, content, progress, completeId, completeDate, writer, regdate)
+		values(#{manager_classification},#{manager_belong}, #{client_number}, #{client_belong}, #{client_local}, #{client_name}, #{call_classification},
+		#{instrument}, #{content},'처리중', ' ', 0, #{writer}, SYSDATE());
 	</insert>
 	
 	<update id="updateIng">
@@ -29,7 +29,7 @@
 	
 	<select id="read" resultType="com.inhatc.system.board.vo.BoardVO">
 		select bno, manager_classification,manager_belong,client_number,
-		client_belong, client_local, client_name, instrument, content, writer, progress, completeId, completeContent
+		client_belong, client_local, client_name, instrument, content, writer, progress, completeId, completeContent, call_classification
 		from board
 		where bno = #{bno};
 	</select>
@@ -40,7 +40,7 @@
 		client_number = #{client_number}, client_name = #{client_name},
 		client_belong = #{client_belong}, client_local = #{client_local}, 
 		instrument = #{instrument}, content = #{content},
-		completeId = #{completeId},	completeContent = #{completeContent} 
+		completeId = #{completeId},	completeContent = #{completeContent}, call_classification = #{call_classification}
 		where bno = #{bno};
 	</update>
 
@@ -136,16 +136,20 @@
 	
 	<select id="listAll_p" resultType="com.inhatc.system.board.vo.BoardVO">
 		select
-		bno, manager_classification, instrument, date_format(regdate, '%Y/%m/%d %H:%i') as regdate, content
+		bno, date_format(regdate, '%Y/%m/%d %H:%i') as regdate, client_name, client_belong, client_local, manager_classification, client_number, instrument, content, completeContent, writer, date_format(completeDate, '%Y/%m/%d %H:%i') as completeDate, completeId
+		
 		from board
 		where bno>0
 	</select>
 	
 	<select id="printDate" resultType="com.inhatc.system.board.vo.BoardVO">
 		select
-		bno, manager_classification, instrument, date_format(regdate, '%Y/%m/%d %H:%i') as regdate, content
-		where
-		date_format(regdate, '%Y-%m-%d') between
-		left(date_range0, 10) and substring(date_range0,15,10);
+	    bno, date_format(regdate, '%Y/%m/%d %H:%i') as regdate, client_name, client_belong, client_local, manager_classification, client_number, instrument, content, completeContent, writer, date_format(completeDate, '%Y/%m/%d %H:%i') as completeDate, completeId
+		from board
+		where bno>0
+        and Date(regdate) between left(#{date_range0}, 10) and right(#{date_range0},10);
+        
 	</select>
+	
+	
 </mapper>

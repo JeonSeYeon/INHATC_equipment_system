@@ -216,11 +216,11 @@ public class BoardServiceImpl implements BoardService {
 	
 	/*기간 설정*/
 	@Override
-	public void printDate(BoardVO board) throws Exception {
+	public List<BoardVO> printDate(BoardVO board,  HttpSession ses) throws Exception {
 		
 		System.out.println("(Board_ServiceImpl) 기간 설정");
 		
-		dao.printDate(board);
+		return dao.printDate(board);
 	}
 	
 }

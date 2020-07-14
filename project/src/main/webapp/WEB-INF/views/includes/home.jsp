@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 
 
-<title>기자재고장처리 A/S확인</title>
+<title>인하공업전문대학 IT지원실</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 

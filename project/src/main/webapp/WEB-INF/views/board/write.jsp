@@ -52,11 +52,11 @@
 
 
 				<tr>
-					<th>의뢰</th>
+					<th colspan="4"><p style = "font-size:1.5em; text-align:center;">의뢰 정보</p></th>
 				</tr>
 				
 				<tr>
-					<th>작업분류</th>
+					<th style = "text-align:center;">작업분류</th>
 					<td><select name="manager_classification">
 							<option value="PC실습실" selected="selected">PC실습실</option>
 							<option value="행정사무실">행정사무실</option>
@@ -69,25 +69,25 @@
 				</tr>
 
 				<tr>
-					<th>연락처</th>
+					<th style = "text-align:center;">연락처</th>
 					<td><input type="text" placeholder="연락처를 입력해주세요." name="client_number" id="client_number" class="form-control" >
 						<!-- <button type="button" id="numberBtn" class="button">조회</button></td> -->
 					
-					<th>이름</th>
+					<th style = "text-align:center;">이름</th>
 					<td><input type="text"  placeholder="이름을 입력해주세요." name="client_name"	id="client_name" class="form-control"></td>
 					
 					
 				</tr>
 				
 				<tr>
-					<th>의뢰소속</th>
+					<th style = "text-align:center;">의뢰소속</th>
 					<td><select name="client_belong">
 							<option value="교수" selected="selected">교수</option>
 							<option value="직원">직원</option>
 							<option value="학생">학생</option>
 							<option value="기타">기타</option>
 					</select></td>
-					<th>위치</th>
+					<th style = "text-align:center;">위치</th>
 					<td><input type="text"  placeholder="위치를 입력해주세요." name="client_local" id="client_local" class="form-control"></td>
 				
 				
@@ -95,18 +95,20 @@
 				
 
 				<tr>
-					<th>기기종류</th>
-					<td colspan="3"><input type="radio" name="instrument" value="1">모니터
-						<input type="radio" name="instrument" value="2">프린터
-						<input type="radio" name="instrument" value="3">PC
-						<input type="radio" name="instrument" value="4">인터넷
-						<input type="radio" name="instrument" value="5">전화기
-						<input type="radio" name="instrument" value="6">프로젝터 빔
-						<input type="radio" name="instrument" value="7">앰프
-						<input type="radio" name="instrument" value="8">소프트웨어 설치
-						<input type="radio" name="instrument" value="10">소프트웨어 인증
-						<input type="radio" name="instrument" value="11">Net-class 관련
-						<input type="radio" name="instrument" value="9">기타</td>
+					<th style = "text-align:center;">기기종류</th>
+					<td colspan="3" >
+					<input type="radio" name="instrument" value="1">모니터
+					<input type="radio" name="instrument" value="3">PC
+					<input type="radio" name="instrument" value="8">소프트웨어 관련(설치&인증) 
+					<input type="radio" name="instrument" value="4">인터넷 <br>
+					
+					<input type="radio" name="instrument" value="2">프린터
+					<input type="radio" name="instrument" value="5">전화기
+					<input type="radio" name="instrument" value="6">프로젝터 빔
+					<input type="radio" name="instrument" value="7">앰프 <br>
+					
+					<input type="radio" name="instrument" value="11">Net-class 관련
+					<input type="radio" name="instrument" value="9">기타</td>
 
 				</tr>
 				</table>
@@ -120,15 +122,24 @@
 					<col width="*">
 				</colgroup>
 					<tr>
-						<th>접수</th>
+						<th colspan="4"><p style = "font-size:1.5em; text-align:center;">접수 정보</p></th>
 					</tr>
 					<tr>
-						<th>접수자</th>
+						<th style = "text-align:center;">접수자</th>
 						<td><input type="text" placeholder="접수자를 입력해주세요." name="writer" id="writer" class="form-control"/></td>
+						
+					
+						<th style = "text-align:center;">접수분류</th>
+						<td><select name="call_classification">
+								<option value="전화" selected="selected">전화</option>
+								<option value="업무연락 전">업무연락 전</option>
+								<option value="이메일">이메일</option>
+								<option value="방문">방문</option>
+						</select></td>
 					</tr>
 					
 					<tr>
-						<th>접수내용</th>
+						<th style = "text-align:center;">접수내용</th>
 						<td colspan="3"><textarea placeholder="접수내용을 입력해주세요." name="content" class="form-control" type="text"></textarea></td>
 					</tr>
 					
