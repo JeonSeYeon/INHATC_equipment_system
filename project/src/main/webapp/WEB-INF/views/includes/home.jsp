@@ -16,6 +16,7 @@
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
+	
 <link href="../../plugins/bootstrap/bootstrap.css" rel="stylesheet">
 <link href="../../plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
 <link
@@ -30,14 +31,15 @@
 <link href="../../plugins/select2/select2.css" rel="stylesheet">
 <link href="../../css/common/style.css" rel="stylesheet">
 
-<link rel="stylesheet" href="/css/board/content.css">
+
+<link rel="stylesheet" href="../../css/board.css">
+
 	
 </head>
 <body>
 </body>
 
 
-<script src="../../js/main/util.js" type="text/javascript"></script>
 <!--End Container-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
@@ -51,4 +53,6 @@
 <script src="../../plugins/tinymce/jquery.tinymce.min.js"></script>
 <!-- All functions for this theme + document.ready processing -->
 <!-- <script src="../../js/common/devoops.js"></script> -->
+
+
 

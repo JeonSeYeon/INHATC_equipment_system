@@ -1,14 +1,13 @@
 /*******************************************************************************
-* DECLARE : 전역함수 지정
-*******************************************************************************/
+ * DECLARE : 전역함수 지정
+ ******************************************************************************/
 "https://code.jquery.com/jquery.js"
 
 jQuery(document).on("keyup", "input:text[num=\"y\"]", function() {$(this).val( $(this).val().replace(/[^0-9.]/gi,"") );});
 
 /*******************************************************************************
-* FUNCTION 명 : gfnAjaxError
-* FUNCTION 기능설명 : AJax 오류처리
-*******************************************************************************/
+ * FUNCTION 명 : gfnAjaxError FUNCTION 기능설명 : AJax 오류처리
+ ******************************************************************************/
 function gfnAjaxError(response, msg) {
 	var msg ="";
     if (typeof(response.AjaxtagErrors) != 'undefined') {
@@ -34,9 +33,8 @@ function gfnAjaxError(response, msg) {
 }
 
 /*******************************************************************************
-* FUNCTION 명 : gfnOpenPop
-* FUNCTION 기능설명 : 팝업오픈
-*******************************************************************************/
+ * FUNCTION 명 : gfnOpenPop FUNCTION 기능설명 : 팝업오픈
+ ******************************************************************************/
 function gfnOpenPop(url, target, w, h, scroll, resizable)
 {
     var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
@@ -44,8 +42,8 @@ function gfnOpenPop(url, target, w, h, scroll, resizable)
 
     var pW = parseInt(w, 10);
     var pH = parseInt(h, 10);
-    var winWidth = window.screen.width;    //해상도가로
-    var winHeight = window.screen.height;     //해상도세로
+    var winWidth = window.screen.width;    // 해상도가로
+    var winHeight = window.screen.height;     // 해상도세로
 
     var pL = ((winWidth - pW)/ 2) + dualScreenLeft - parseInt(pW / 2);
     var pT = ((winHeight - pH)/ 2) + dualScreenTop - parseInt(pH / 2);
@@ -66,9 +64,8 @@ function gfnOpenPop(url, target, w, h, scroll, resizable)
 }
 
 /*******************************************************************************
-* FUNCTION 명 : gfnOpenPopPost
-* FUNCTION 기능설명 : 팝업오픈 POST전송
-*******************************************************************************/
+ * FUNCTION 명 : gfnOpenPopPost FUNCTION 기능설명 : 팝업오픈 POST전송
+ ******************************************************************************/
 function gfnOpenPopPost(url, postData, target, w, h, scroll, resizable)
 {
     gfnOpenPop("about:blank", target, w, h, scroll, resizable);

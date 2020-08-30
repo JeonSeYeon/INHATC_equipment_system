@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <%@ page import="java.io.PrintWriter"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" import="java.util.*" %>
@@ -7,9 +6,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <jsp:include page="/WEB-INF/views/includes/home.jsp" flush="true" />
-<jsp:include page="/WEB-INF/views/includes/header.jsp" flush="true" />
-
-
 <link rel="stylesheet" href="/css/board/content.css">
 <link rel="stylesheet" href="/calendar/daterangepicker.css">
 <script src="/js/main/util.js" type="text/javascript"></script>
@@ -18,6 +14,7 @@
 <script src="/calendar/moment.min.js"></script>
 <script src="/calendar/jquery.daterangepicker.js"></script>
 <script src="/calendar/demo.js"></script>
+
 
 <%
 	String userID = null;
@@ -44,47 +41,21 @@
 		script.println("</script>");
 	} 
  %> 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>업무 보고서 출력</title>
+ 
+ <head>
 <style>
-table.type04 {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: left;
-    line-height: 1.5;
-    border-top: 1px solid #ccc;
-  margin : 20px 10px;
-}
-table.type04 th {
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-}
-table.type04 td {
-    width: 350px;
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-}
-#wrapper
-		{
-			width:800px;
-			margin:0 auto;
-			color:#333;
-			font-family:Tahoma;
-			line-height:1.5;
-			font-size:14px;
-		}
-		.demo { margin:30px 0;}
-		.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
-		.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
-		.date-picker-wrapper.date_range-picker19 .day.first-date-selected { background-color: red !important; }
-		.date-picker-wrapper.date_range-picker19 .day.last-date-selected { background-color: orange !important; }
+{ .no-print, .no-print * { display: none !important; } }
 </style>
+
+  <!-- Custom fonts for this template-->
+  <link href="../../css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+
+<title>업무 보고서 출력</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/css/board/common.css">
 <link rel="stylesheet" href="/css/board/default.css">
@@ -103,38 +74,83 @@ table.type04 td {
 					evt.preventDefault();
 					$(this).siblings('.options').slideToggle();
 				});
-			})
+			});
+   
+
+   function fncPrint() {
+   	document.form.action='/board/print';
+   	document.form.submit();
+   }
+ 
    </script>
 <!-- 프린트를 위해 따로 나눠준 자바스크립트 파일 -->
 </head>
-<body>
 
-	<form>
-		<span style="margin-top:50px;" class="button bt02"><input type="button" value="출력하기" onclick="goPrints(title);" /></span>
-	</form>
+<body>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+          
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a href="/"><img src="../../img/logo.png" alt="/" width="200px" height="45px" align="center" border="0"></a>
+              
+              
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
 	
+<div class="no-print">
 	<div id="wrapper">
+	<form>
+		<span style="margin-left:150px;" class="button bt02"><input type="button" value="출력하기" onclick="goPrints(title);" /></span>
+	</form>
 		<form action="/print/date" method="post">
-			<div class="demo">
+			<div class="demo" style="color:black; font-weight:bold">
 				기간설정: <input type="text" id="date_range0" name="date_range0" size="40" value=""> 
+				<button style="color:#FFFFFF; font-weight:bold"> 검색 </button>
 				
 			</div>
 			
-			<button>gogo</button>
+			
 		</form>
+		<form action="/board/print" method="post" name="form">
+		<a href="#" type="submit" onclick="fncPrint();"><button style="color:#FFFFFF; font-weight:bold; margin-left:-600px;">초기화</button></a>
+	    </form>
+		
 	</div>
+</div>
 
 <div id="printarea">
-<!-- 프린트 하기위한 영역 -->
-<table width="*" cellspacing="1" border="0" class="type04" >
-						
+
+		<!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">현재 처리현황</h6>
+            </div>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+							
 							<thead>
 								
 								<tr>
 										<th>번호</th>
 										<th>접수일자</th>
 										<th>의뢰인</th>
-										<th>소속</th>
+										<th>의뢰 구분</th>
 										<th>위치(호관-호실)</th>
 										<th>실 구분</th>
 										<th>연락처</th>
@@ -183,7 +199,7 @@ table.type04 td {
 									</c:when>
 									<c:otherwise>
 										<tr>
-											<td colspan="9">조회된 결과가 없습니다.</td>
+											<td colspan="13">조회된 결과가 없습니다.</td>
 										</tr>
 									</c:otherwise>
 								</c:choose>
@@ -192,7 +208,9 @@ table.type04 td {
 						</table>
 </div>
 
-
+</div>
+					</div>
+				</div>
 </body>
 </html>
 

@@ -92,7 +92,7 @@ public class BoardController {
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<script>alert('등록이 완료되었습니다.'); window.opener.location.reload(); window.close(); </script>");
+		out.println("<script>alert('등록이 완료되었습니다.'); location.href='/'; </script>");
 		//out.flush();
 	}
 
@@ -108,7 +108,7 @@ public class BoardController {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		out.println("<script>alert('처리가 신청되었습니다.'); window.opener.location.reload(); window.close();</script>");
+		out.println("<script>alert('처리가 신청되었습니다.'); location.href='/';</script>");
 		out.flush();
 
 	}
@@ -125,7 +125,7 @@ public class BoardController {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		out.println("<script>alert('처리가 완료되었습니다.'); window.opener.location.reload(); window.close();</script>");
+		out.println("<script>alert('처리가 완료되었습니다.');location.href='/';</script>");
 		out.flush();
 	}
 
@@ -148,7 +148,7 @@ public class BoardController {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
-		out.println("<script> alert('삭제가 완료되었습니다.'); window.opener.location.reload(); window.close();</script>");
+		out.println("<script> alert('삭제가 완료되었습니다.');location.href='/';</script>");
 		out.flush();
 
 	}
@@ -174,7 +174,7 @@ public class BoardController {
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<script>alert('수정이 완료되었습니다.'); window.opener.location.reload(); window.close();</script>");
+		out.println("<script>alert('수정이 완료되었습니다.'); location.href='/';</script>");
 		out.flush();
 
 	}
@@ -217,7 +217,7 @@ public class BoardController {
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<script>alert('수정이 완료되었습니다.'); window.opener.location.reload(); window.close();</script>");
+		out.println("<script>alert('수정이 완료되었습니다.'); location.href='/';</script>");
 		out.flush();
 	}
 
@@ -235,7 +235,7 @@ public class BoardController {
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<script>alert('등록이 완료되었습니다.'); window.opener.location.reload(); window.close();</script>");
+		out.println("<script>alert('등록이 완료되었습니다.'); location.href='/'; </script>");
 		out.flush();
 
 	}
@@ -255,7 +255,7 @@ public class BoardController {
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<script>alert('삭제가 완료되었습니다.'); window.opener.location.reload(); window.close();</script>");
+		out.println("<script>alert('삭제가 완료되었습니다.'); location.href='/'; </script>");
 		out.flush();
 	}
 
@@ -325,6 +325,14 @@ public class BoardController {
 		
 		return "board/print_page";
 	}
+	
+	
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String printDateGet(BoardVO board, HttpSession ses, Model model) throws Exception {
+		
+		return "board/index";
+	}
+	
 }
 
 

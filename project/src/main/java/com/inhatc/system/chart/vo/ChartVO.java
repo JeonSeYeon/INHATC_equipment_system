@@ -9,16 +9,16 @@ public class ChartVO {
 	private String etc_classification; //±‚≈∏
 	private String year;
 	private String completedate;
-private String instrument;
-	
-	
+	private String instrument;
+
+
 	public String getInstrument() {
 	return instrument;
-}
-	
-public void setInstrument(String instrument) {
-	this.instrument = instrument;
-}
+	}
+		
+	public void setInstrument(String instrument) {
+		this.instrument = instrument;
+	}
 	public String getCompletedate() {
 		return completedate;
 	}
@@ -72,7 +72,7 @@ public void setInstrument(String instrument) {
 	public void setEtc_classification(String etc_classification) {
 		this.etc_classification = etc_classification;
 	}
-	
+
 	
 	
 	

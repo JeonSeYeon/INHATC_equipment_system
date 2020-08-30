@@ -157,9 +157,9 @@ span.button > *,
 span.button > * > span,
 ul.headTab a { background:url('../../images/bg_button.png') no-repeat 0 0; font-weight:bold;}
 span.button,
-span.button > * { position:relative; display:inline-block; margin:0; padding:0; border:0; outline:0; font-size:13px; white-space:nowrap; vertical-align:middle; overflow:visible; }
+span.button > * { position:relative;margin:0; padding:0; border:0; outline:0; font-size:13px; white-space:nowrap; vertical-align:middle; overflow:visible; }
 span.button { margin: 0 5px; }
-span.button > * { left:5px; height:40px; padding:0 20px 3px 15px; color:#555; background-position:100% -219px; cursor:pointer; text-align:center; }
+span.button > * { left:1040px; height:40px; padding:0 20px 3px 15px; color:#555; background-position:100% -219px; cursor:pointer; text-align:center; }
 span.button.on { background-position:0 -263px;  }
 span.button.on > * { background-position:100% -263px;  }
 /* 화이트 */

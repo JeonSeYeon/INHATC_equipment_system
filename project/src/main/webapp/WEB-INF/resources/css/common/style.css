@@ -75,7 +75,6 @@ a.show-sidebar:hover {
 #content {
   position: relative;
   z-index: 10;
-  background: #ebebeb;
   box-shadow: 0 0 6px #131313;
   padding-bottom: 3000px !important;
   margin-bottom: -2980px !important;
@@ -753,7 +752,6 @@ td.beauty-hover {
   text-align: center;
   background-color: #a2a2a2;
   background: #a2a2a2 -moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(255,255,255,0));
-  background: #a2a2a2 -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.6)), to(rgba(255,255,255,0)));
   line-height: 24px;
   margin: 0 0 10px 0;
   padding: 0 10px;
@@ -2235,8 +2233,8 @@ td.beauty-hover {
   z-index: 2;
   color: #fff;
   cursor: default;
-  background-color: #6AA6D6;
-  border-color: #6AA6D6;
+  background-color: #2f56c8;
+  border-color: #2f56c8;
 }
 .fancybox-nav {
   position: fixed;

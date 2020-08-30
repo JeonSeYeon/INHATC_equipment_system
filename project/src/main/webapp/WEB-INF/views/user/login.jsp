@@ -7,19 +7,33 @@
 <jsp:include page="/WEB-INF/views/includes/home.jsp" flush="true" />
 <jsp:include page="/WEB-INF/views/includes/header.jsp" flush="true" />
 
-<link rel="stylesheet" href="../css/user/login.css">
+<link rel="stylesheet" href="/../css/user/login.css">
 
-	<form method="post" class="signUp" id="signupForm" name="signupForm">
-		<h3 class="signUpTitle">IT지원실<br>- 로그인</h3>
-		
-		<input type="text" id="id" name="id" class="signUpInput" placeholder="학번을 입력해주세요." autofocus required> 
-		<input type="password" id="pw" name="pw" class="signUpInput" placeholder="비밀번호를 입력해주세요." onkeypress="if(event.keyCode == 13){ fncLogin(); return;}" required> 
-		<input type="button" value="로그인" class="signUpButton" onclick="fncLogin()">
-		
-	</form>
-	
+<div class="form">
+	<div class="form-toggle"></div>
+	<div class="form-panel one">
+		<div class="form-header">
+			<h1>Login</h1>
+		</div>
+		<div class="form-content">
+			<form id="signupForm" name="signupForm">
+				<div class="form-group">
+					<label for="username">Id</label> <input type="text" id="id"	name="id" autofocus required />
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" id="pw" name="pw" onkeypress="if(event.keyCode == 13){ fncLogin(); return;}" required />
+				</div>
+				<div class="form-group">
+					<input type="button" value="Login" class="signUpButton" onclick="fncLogin()">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 <jsp:include page="/WEB-INF/views/includes/footer.jsp" flush="true" />
- 
+
 <script>
 function fncLogin() {
 	

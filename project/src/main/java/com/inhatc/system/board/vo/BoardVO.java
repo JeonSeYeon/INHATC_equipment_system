@@ -23,15 +23,17 @@ public class BoardVO {
 	private String date_start;
 	private String date_end;
 	private String call_classification;
-	private Integer n_bno;
+	private String client_division;
 	
+
+	public String getClient_division() {
+		return client_division;
+	}
+
+	public void setClient_division(String client_division) {
+		this.client_division = client_division;
+	}
 	
-	public Integer getN_bno() {
-		return n_bno;
-	}
-	public void setN_bno(Integer n_bno) {
-		this.n_bno = n_bno;
-	}
 	public Integer getBno() {
 		return bno;
 	}
