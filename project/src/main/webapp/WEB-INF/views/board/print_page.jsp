@@ -86,9 +86,8 @@
 <!-- 프린트를 위해 따로 나눠준 자바스크립트 파일 -->
 </head>
 
-<body>
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column" style="margin-top:-20px">
 
       <!-- Main Content -->
       <div id="content">
@@ -147,10 +146,9 @@
 							<thead>
 								
 								<tr>
-										<th>번호</th>
 										<th>접수일자</th>
 										<th>의뢰인</th>
-										<th>의뢰 구분</th>
+										<th>의뢰 소속</th>
 										<th>위치(호관-호실)</th>
 										<th>실 구분</th>
 										<th>연락처</th>
@@ -169,7 +167,6 @@
 							<tbody>
 								<!-- Start: list_row -->
 								<tr>
-									<td>${boardList[rowIndex.index].bno}</td>
 									<td>${boardList[rowIndex.index].regdate}</td>
 									<td>${boardList[rowIndex.index].client_name}</td>
 									<td>${boardList[rowIndex.index].client_belong}</td>
@@ -211,8 +208,6 @@
 </div>
 					</div>
 				</div>
-</body>
-</html>
 
 
 

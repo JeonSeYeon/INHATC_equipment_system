@@ -145,7 +145,7 @@
 	
 	<select id="printDate" resultType="com.inhatc.system.board.vo.BoardVO">
 		select
-	    bno, date_format(regdate, '%Y/%m/%d %H:%i') as regdate, client_name, client_belong, client_local, manager_classification, client_number, instrument, content, completeContent, writer, date_format(completeDate, '%Y/%m/%d %H:%i') as completeDate, completeId
+	    date_format(regdate, '%Y/%m/%d %H:%i') as regdate, client_name, client_belong, client_division, client_local, manager_classification, client_number, instrument, content, completeContent, writer, date_format(completeDate, '%Y/%m/%d %H:%i') as completeDate, completeId
 		from board
 		where bno>0
         and Date(regdate) between left(#{date_range0}, 10) and right(#{date_range0},10);
